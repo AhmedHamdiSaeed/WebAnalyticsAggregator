@@ -1,0 +1,15 @@
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Domain\bin\Debug\net8.0\Domain.dll
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Domain\bin\Debug\net8.0\Domain.pdb
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Domain\bin\Debug\net8.0\Infrastructure.dll
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Domain\bin\Debug\net8.0\Infrastructure.pdb
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Domain\obj\Debug\net8.0\Domain.csproj.Up2Date
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Domain\obj\Debug\net8.0\Domain.dll
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Domain\obj\Debug\net8.0\Domain.pdb
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Domain\obj\Debug\net8.0\ref\Domain.dll

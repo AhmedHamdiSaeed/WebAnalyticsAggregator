@@ -1,0 +1,14 @@
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Infrastructure\obj\Debug\net8.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfo.cs
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Infrastructure\bin\Debug\net8.0\Infrastructure.deps.json
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Infrastructure\bin\Debug\net8.0\Infrastructure.runtimeconfig.json
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Infrastructure\bin\Debug\net8.0\Infrastructure.dll
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Infrastructure\bin\Debug\net8.0\Infrastructure.pdb
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Infrastructure\obj\Debug\net8.0\Infrastructure.dll
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
+C:\Users\Dell\source\repos\WebAnalyticsAggregator\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll

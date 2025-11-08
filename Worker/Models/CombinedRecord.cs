@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Consumer.Models
+{
+    public class CombinedRecord
+    {
+        public string Page { get; set; } = string.Empty;
+        public DateTime Date { get; set; }
+        public int Users { get; set; }
+        public int Sessions { get; set; }
+        public int Views { get; set; }
+        public double PerformanceScore { get; set; }
+        public int LCP_ms { get; set; }
+    }
+}

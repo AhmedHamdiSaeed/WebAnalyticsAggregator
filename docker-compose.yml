@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  rabbitmq:
+    container_name: rabbitmq  
+    image: rabbitmq:3.8-management-alpine
+    ports:
+      - "5672:5672"     # broker port
+      - "15672:15672"   # management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
+  webapi:
+    build:
+     context: WebAnalyticsAggregator
+    ports:
+      - "8080:8080"
+    depends_on:
+    - rabbitmq
+    environment:
+      RabbitMq__HostName: rabbitmq
+      RabbitMq__UserName: user
+      RabbitMq__Password: password
+      db:
+      image: mcr.microsoft.com/mssql/server:2022-latest
+      environment:
+      SA_PASSWORD: "password"
+      ACCEPT_EULA: "Y"
+      ports:
+       "1433:1433"
+      publisher:
+      build: ./WebAnalytics.Producer
+      depends_on: rabbitmq
+  consumer:
+    build: ./Worker
+    depends_on:
+      - rabbitmq
+      - db

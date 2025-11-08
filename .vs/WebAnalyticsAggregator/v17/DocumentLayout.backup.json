@@ -1,0 +1,365 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6F822FFD-41C2-4C98-9C02-4CA5A40F6E2E}|WebAnalyticsAggregator\\WebAnalyticsAggregator.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\webanalyticsaggregator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F822FFD-41C2-4C98-9C02-4CA5A40F6E2E}|WebAnalyticsAggregator\\WebAnalyticsAggregator.csproj|solutionrelative:webanalyticsaggregator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F822FFD-41C2-4C98-9C02-4CA5A40F6E2E}|WebAnalyticsAggregator\\WebAnalyticsAggregator.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\webanalyticsaggregator\\webanalyticsaggregator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6F822FFD-41C2-4C98-9C02-4CA5A40F6E2E}|WebAnalyticsAggregator\\WebAnalyticsAggregator.csproj|solutionrelative:webanalyticsaggregator\\webanalyticsaggregator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\infrastructure\\infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99AB930F-B83C-4039-963A-18FD91BC8AD9}|Application\\Application.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\application\\interfaces\\ireportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99AB930F-B83C-4039-963A-18FD91BC8AD9}|Application\\Application.csproj|solutionrelative:application\\interfaces\\ireportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99AB930F-B83C-4039-963A-18FD91BC8AD9}|Application\\Application.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\application\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99AB930F-B83C-4039-963A-18FD91BC8AD9}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99AB930F-B83C-4039-963A-18FD91BC8AD9}|Application\\Application.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\application\\implementations\\userservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99AB930F-B83C-4039-963A-18FD91BC8AD9}|Application\\Application.csproj|solutionrelative:application\\implementations\\userservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99AB930F-B83C-4039-963A-18FD91BC8AD9}|Application\\Application.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{99AB930F-B83C-4039-963A-18FD91BC8AD9}|Application\\Application.csproj|solutionrelative:application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99AB930F-B83C-4039-963A-18FD91BC8AD9}|Application\\Application.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\application\\implementations\\reportservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99AB930F-B83C-4039-963A-18FD91BC8AD9}|Application\\Application.csproj|solutionrelative:application\\implementations\\reportservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\infrastructure\\security\\jwtprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\security\\jwtprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\infrastructure\\repositories\\analyticsrepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\analyticsrepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\infrastructure\\security\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\security\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\infrastructure\\entities\\combinedrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\entities\\combinedrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\infrastructure\\interfaces\\iuserrepositorycs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\interfaces\\iuserrepositorycs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\infrastructure\\interfaces\\ianalyticsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\interfaces\\ianalyticsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\infrastructure\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|c:\\users\\dell\\source\\repos\\webanalyticsaggregator\\infrastructure\\entities\\dailystats .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6A97C44-460F-4BC0-AB1E-8DC76E27AE5D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\entities\\dailystats .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 575,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 244,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Infrastructure",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Infrastructure.csproj",
+              "RelativeDocumentMoniker": "Infrastructure\\Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Infrastructure.csproj",
+              "RelativeToolTip": "Infrastructure\\Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-08T21:44:42.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WebAnalyticsAggregator",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\WebAnalyticsAggregator\\WebAnalyticsAggregator.csproj",
+              "RelativeDocumentMoniker": "WebAnalyticsAggregator\\WebAnalyticsAggregator.csproj",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\WebAnalyticsAggregator\\WebAnalyticsAggregator.csproj",
+              "RelativeToolTip": "WebAnalyticsAggregator\\WebAnalyticsAggregator.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-08T21:44:27.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-11-08T21:42:31.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\WebAnalyticsAggregator\\Program.cs",
+              "RelativeDocumentMoniker": "WebAnalyticsAggregator\\Program.cs",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\WebAnalyticsAggregator\\Program.cs",
+              "RelativeToolTip": "WebAnalyticsAggregator\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T21:41:23.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IReportService.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Application\\Interfaces\\IReportService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IReportService.cs",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Application\\Interfaces\\IReportService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IReportService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T21:41:15.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Application\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IUserService.cs",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Application\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T21:41:06.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserService .cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Application\\Implementations\\UserService .cs",
+              "RelativeDocumentMoniker": "Application\\Implementations\\UserService .cs",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Application\\Implementations\\UserService .cs",
+              "RelativeToolTip": "Application\\Implementations\\UserService .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T21:38:01.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ReportService .cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Application\\Implementations\\ReportService .cs",
+              "RelativeDocumentMoniker": "Application\\Implementations\\ReportService .cs",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Application\\Implementations\\ReportService .cs",
+              "RelativeToolTip": "Application\\Implementations\\ReportService .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T21:37:26.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "JwtProvider.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Security\\JwtProvider.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Security\\JwtProvider.cs",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Security\\JwtProvider.cs",
+              "RelativeToolTip": "Infrastructure\\Security\\JwtProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T21:35:09.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\DependencyInjection.cs",
+              "RelativeToolTip": "Infrastructure\\DependencyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T21:34:38.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PasswordHasher.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Security\\PasswordHasher.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Security\\PasswordHasher.cs",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Security\\PasswordHasher.cs",
+              "RelativeToolTip": "Infrastructure\\Security\\PasswordHasher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T21:36:14.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIAwwBgAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T21:30:37.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AnalyticsRepository .cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Repositories\\AnalyticsRepository .cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\AnalyticsRepository .cs",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Repositories\\AnalyticsRepository .cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\AnalyticsRepository .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T21:29:17.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CombinedRecord.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Entities\\CombinedRecord.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Entities\\CombinedRecord.cs",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Entities\\CombinedRecord.cs",
+              "RelativeToolTip": "Infrastructure\\Entities\\CombinedRecord.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T21:31:49.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IUserRepositorycs.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\interfaces\\IUserRepositorycs.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\interfaces\\IUserRepositorycs.cs",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\interfaces\\IUserRepositorycs.cs",
+              "RelativeToolTip": "Infrastructure\\interfaces\\IUserRepositorycs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T21:32:58.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Application",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Application\\Application.csproj",
+              "RelativeDocumentMoniker": "Application\\Application.csproj",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Application\\Application.csproj",
+              "RelativeToolTip": "Application\\Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-08T21:28:37.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IAnalyticsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\interfaces\\IAnalyticsRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\interfaces\\IAnalyticsRepository.cs",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\interfaces\\IAnalyticsRepository.cs",
+              "RelativeToolTip": "Infrastructure\\interfaces\\IAnalyticsRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T21:29:03.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Entities\\User.cs",
+              "RelativeToolTip": "Infrastructure\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T21:33:21.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "DailyStats .cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Entities\\DailyStats .cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Entities\\DailyStats .cs",
+              "ToolTip": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Entities\\DailyStats .cs",
+              "RelativeToolTip": "Infrastructure\\Entities\\DailyStats .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T21:31:48.718Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

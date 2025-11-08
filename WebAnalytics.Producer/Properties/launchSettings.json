@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WebAnalytics.Producer": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
