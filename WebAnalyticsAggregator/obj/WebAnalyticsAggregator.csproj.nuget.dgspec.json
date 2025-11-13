@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\WebAnalyticsAggregator\\WebAnalyticsAggregator.csproj": {}
+    "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\WebAnalyticsAggregator\\WebAnalyticsAggregator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Application\\Application.csproj": {
+    "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Application\\obj\\",
+        "projectPath": "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\mahao\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mahao\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\DTOs\\DTOs.csproj": {
+                "projectPath": "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\DTOs\\DTOs.csproj"
+              },
+              "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -48,7 +51,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -75,24 +78,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\DTOs\\DTOs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Infrastructure.csproj",
-        "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\obj\\",
+        "projectUniqueName": "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\DTOs\\DTOs.csproj",
+        "projectName": "DTOs",
+        "projectPath": "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\DTOs\\DTOs.csproj",
+        "packagesPath": "C:\\Users\\mahao\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\DTOs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mahao\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -119,7 +122,76 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\Infrastructure\\Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\Infrastructure\\Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\mahao\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mahao\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\DTOs\\DTOs.csproj": {
+                "projectPath": "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\DTOs\\DTOs.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -156,24 +228,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\WebAnalyticsAggregator\\WebAnalyticsAggregator.csproj": {
+    "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\WebAnalyticsAggregator\\WebAnalyticsAggregator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\WebAnalyticsAggregator\\WebAnalyticsAggregator.csproj",
+        "projectUniqueName": "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\WebAnalyticsAggregator\\WebAnalyticsAggregator.csproj",
         "projectName": "WebAnalyticsAggregator",
-        "projectPath": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\WebAnalyticsAggregator\\WebAnalyticsAggregator.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\WebAnalyticsAggregator\\obj\\",
+        "projectPath": "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\WebAnalyticsAggregator\\WebAnalyticsAggregator.csproj",
+        "packagesPath": "C:\\Users\\mahao\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\WebAnalyticsAggregator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mahao\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -188,11 +260,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Application\\Application.csproj"
+              "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\Application\\Application.csproj"
               },
-              "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Dell\\source\\repos\\WebAnalyticsAggregator\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\mahao\\source\\repos\\AhmedHamdiSaeed\\WebAnalyticsAggregator\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -207,7 +279,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -267,7 +339,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

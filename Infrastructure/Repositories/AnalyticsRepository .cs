@@ -1,4 +1,5 @@
-﻿using Infrastructure.Data;
+﻿using DTOs.Reports;
+using Infrastructure.Data;
 using Infrastructure.Entities;
 using Infrastructure.interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -20,10 +21,19 @@ namespace Infrastructure.Repositories
             return await _dbContext.DailyStats.ToListAsync();
         }
 
-        public async Task<IEnumerable<DailyStats>> GetPerPageAggregatedStatsAsync()
+        public async Task<IEnumerable<PageReportDto>> GetPerPageAggregatedStatsAsync()
         {
-            // Example: group by Page (if you have RawData table)
-            return await _dbContext.DailyStats.ToListAsync();
+            return await _dbContext.RawData
+                .GroupBy(r => r.Page)
+                .Select(g => new PageReportDto
+                {
+                    Page = g.Key,
+                    TotalUsers = g.Sum(x => x.Users),
+                    TotalSessions = g.Sum(x => x.Sessions),
+                    TotalViews = g.Sum(x => x.Views),
+                    AvgPerformance = g.Average(x => x.PerformanceScore)
+                })
+                .ToListAsync();
         }
 
         public async Task SaveRawRecordAsync(CombinedRecord rawData)

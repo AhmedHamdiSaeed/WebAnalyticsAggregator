@@ -1,4 +1,5 @@
-﻿using Infrastructure.Entities;
+﻿using DTOs.Reports;
+using Infrastructure.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Infrastructure.interfaces
     public interface IAnalyticsRepository
     {
         Task<IEnumerable<DailyStats>> GetAggregatedStatsAsync();
-        Task<IEnumerable<DailyStats>> GetPerPageAggregatedStatsAsync();
+        Task<IEnumerable<PageReportDto>> GetPerPageAggregatedStatsAsync();
         Task SaveRawRecordAsync(CombinedRecord rawData);
     }
 }

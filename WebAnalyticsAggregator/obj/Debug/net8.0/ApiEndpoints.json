@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Application.DTOs.Auth.UserLoginRequest",
+        "Type": "DTOs.Auth.UserLoginRequest",
         "IsRequired": true
       }
     ],
@@ -25,7 +25,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Application.DTOs.Auth.UserRegisterRequest",
+        "Type": "DTOs.Auth.UserRegisterRequest",
         "IsRequired": true
       }
     ],
@@ -41,7 +41,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "Application.DTOs.Reports.OverviewReportDto",
+        "Type": "DTOs.Reports.OverviewReportDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -61,7 +61,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Application.DTOs.Reports.PageReportDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DTOs.Reports.PageReportDto, DTOs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -70,42 +70,5 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "Controllers.testRabbitmqController",
-    "Method": "Post",
-    "RelativePath": "api/testRabbitmq",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "data",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebAnalyticsAggregator.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[API.WeatherForecast, WebAnalyticsAggregator, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetWeatherForecast"
   }
 ]

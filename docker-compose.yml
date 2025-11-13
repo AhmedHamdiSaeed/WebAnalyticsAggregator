@@ -9,29 +9,55 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: user
       RABBITMQ_DEFAULT_PASS: password
+  db:
+   image: mcr.microsoft.com/mssql/server:2022-latest
+   environment:
+    SA_PASSWORD: "Password123"
+    ACCEPT_EULA: "Y"
+    ports:
+       "1433:1433"
+    volumes:
+       sql_data:/var/opt/mssql
   webapi:
     build:
-     context: WebAnalyticsAggregator
+     context: .
+     dockerfile: WebAnalyticsAggregator/Dockerfile
     ports:
       - "8080:8080"
     depends_on:
     - rabbitmq
+    - db 
     environment:
       RabbitMq__HostName: rabbitmq
       RabbitMq__UserName: user
       RabbitMq__Password: password
-      db:
-      image: mcr.microsoft.com/mssql/server:2022-latest
-      environment:
-      SA_PASSWORD: "password"
-      ACCEPT_EULA: "Y"
-      ports:
-       "1433:1433"
-      publisher:
-      build: ./WebAnalytics.Producer
-      depends_on: rabbitmq
+      ConnectionStrings__DefaultConnection: "Server=db;Database=WebAnalyticsDB;User Id=sa;Password=Password123;TrustServerCertificate=True;"
+           
+      # JWT config
+      Jwt__Key: "YourVeryLongSecretKeyThatIsAtLeast32Chars!"
+      Jwt__Issuer: "MyAppIssuer"
+      Jwt__Audience: "MyAppAudience"
+      Jwt__ExpiresInMinutes: "60"
+      ASPNETCORE_ENVIRONMENT: Development
+  publisher:
+    build:
+     context: .            
+     dockerfile: Producer/Dockerfile
+    depends_on: 
+     - rabbitmq
+    environment:
+      RabbitMq__HostName: rabbitmq
+      RabbitMq__UserName: user
+      RabbitMq__Password: password
+    ports:
+      - "8000:8000"
   consumer:
     build: ./Worker
     depends_on:
       - rabbitmq
       - db
+    environment:
+      RabbitMq__HostName: rabbitmq
+      RabbitMq__UserName: user
+      RabbitMq__Password: password
+      ConnectionStrings__DefaultConnection: "Server=db;Database=WebAnalyticsDB;User Id=sa;Password=Password123;TrustServerCertificate=True;"

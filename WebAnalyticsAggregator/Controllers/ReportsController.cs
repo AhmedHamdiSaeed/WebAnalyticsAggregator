@@ -1,6 +1,7 @@
-﻿using Application.DTOs.Reports;
-using Application.Implementations;
+﻿using Application.Implementations;
 using Application.Interfaces;
+using DTOs.Reports;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,14 +17,14 @@ namespace WebAnalyticsAggregator.Controllers
         {
             _reportsService = reportsService;
         }
-
         [HttpGet("overview")]
         public async Task<ActionResult<OverviewReportDto>> GetOverview()
         {
-            var report = await _reportsService.GetOverviewReportAsync();
-            return Ok(report);
+            var result = await _reportsService.GetOverviewReportAsync();
+            if(result.IsSuccess)
+            return Ok(result);
+            return BadRequest(result);
         }
-
         [HttpGet("pages")]
         public async Task<ActionResult<IEnumerable<PageReportDto>>> GetPerPageReport()
         {

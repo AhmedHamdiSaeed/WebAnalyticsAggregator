@@ -1,8 +1,9 @@
-﻿using Producer.Models;
+﻿using DTOs;
 using RabbitMQ.Client;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Channels;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Producer.Services
 {
@@ -10,13 +11,9 @@ namespace Producer.Services
     {
         private IConnection? _connection;
         private IChannel _channel;
-        private readonly string _hostname;
         private const string QueueName = "analytics.raw.q";
 
-        public RabbitMqPublisher(string hostname = "localhost")
-        {
-            _hostname = hostname; // store hostname, don't create connection here
-        }
+
 
         /// <summary>
         /// Initialize the RabbitMQ connection and channel.
@@ -31,11 +28,11 @@ namespace Producer.Services
                 Password = "password",
                 VirtualHost = "/"
             };
-            var conn = await factory.CreateConnectionAsync();
-            using var channel = await conn.CreateChannelAsync();
-            await channel.QueueDeclareAsync(queue: "testQueue",
+            _connection = await factory.CreateConnectionAsync();
+            _channel = await _connection.CreateChannelAsync();
+            await _channel.QueueDeclareAsync(queue: QueueName,
                                   durable: true,
-                                  exclusive: true,
+                                  exclusive: false,
                                   autoDelete: false,
                                   arguments: null);
             Console.WriteLine("[x] RabbitMQ initialized.");
@@ -52,8 +49,8 @@ namespace Producer.Services
             var body = Encoding.UTF8.GetBytes(message);
 
             // wrap synchronous BasicPublish in Task.Run
-             await _channel.BasicPublishAsync(exchange: "", routingKey: "testQueue", body: body);
-             Console.WriteLine($"[x] Published: {record.Page} ({record.Date})");
+             await _channel.BasicPublishAsync(exchange: "", routingKey: QueueName, body: body);
+             Console.WriteLine($"[✓] Published: {record.Page} ({record.Date})");
             
         }
 

@@ -1,4 +1,4 @@
-using Consumer.Data;
+﻿using Consumer.Data;
 using Consumer.Models;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -10,85 +10,143 @@ namespace Worker.Services
 {
     public class AnalyticsConsumerService : BackgroundService
     {
-        private readonly AnalyticsDbContext _db;
+        private readonly IServiceScopeFactory _scopeFactory;
         private readonly string _queueName = "analytics.raw.q";
         private IConnection? _connection;
         private IChannel? _channel;
+        private ILogger<AnalyticsConsumerService> _logger;
 
-        public AnalyticsConsumerService(AnalyticsDbContext db)
+        public AnalyticsConsumerService(IServiceScopeFactory scopeFactory, ILogger<AnalyticsConsumerService> logger)
         {
-             _db = db;
+            _scopeFactory = scopeFactory;
+            _logger = logger;
         }
 
-        protected async override Task ExecuteAsync(CancellationToken stoppingToken)
+        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            var factory = new RabbitMQ.Client.ConnectionFactory()
-            {
-                HostName = "rabbitmq",
-                UserName = "user",
-                Password = "password",
-                VirtualHost = "/"
-            };
-            var conn = await factory.CreateConnectionAsync();
-            using var channel = await conn.CreateChannelAsync();
-            await channel.QueueDeclareAsync(queue: "testQueue",
-                                  durable: true,
-                                  exclusive: true,
-                                  autoDelete: false,
-                                  arguments: null);
+            const int maxRetries = 10;
+            int attempt = 0;
 
-            var consumer = new AsyncEventingBasicConsumer(_channel);
-            consumer.ReceivedAsync += async (model, ea) =>
+            while (!stoppingToken.IsCancellationRequested)
             {
-                var body = ea.Body.ToArray();
-                var message = Encoding.UTF8.GetString(body);
-                var record = JsonSerializer.Deserialize<CombinedRecord>(message);
-
-                if (record != null)
+                try
                 {
-                    try
+                    // --- Try to connect ---
+                    var factory = new ConnectionFactory
                     {
-                      //  Save raw data
-                        _db.RawData.Add(record);
+                        HostName = "rabbitmq",
+                        UserName = "user",
+                        Password = "password",
+                        VirtualHost = "/"
+                    };
 
-                    //    Aggregate daily stats
-                       var daily = _db.DailyStats.FirstOrDefault(d => d.Date == record.Date);
-                        if (daily == null)
+                    Console.WriteLine("[*] Connecting to RabbitMQ...");
+                    _connection = await factory.CreateConnectionAsync();
+                    _channel = await _connection.CreateChannelAsync();
+
+                    await _channel.QueueDeclareAsync(
+                        queue: _queueName,
+                        durable: true,
+                        exclusive: false,
+                        autoDelete: false,
+                        arguments: null
+                    );
+
+                    Console.WriteLine("[✓] Connected and queue declared.");
+
+                    var consumer = new AsyncEventingBasicConsumer(_channel);
+                
+                    consumer.ReceivedAsync += async (model, ea) =>
+                    {
+                        try
                         {
-                            daily = new DailyStats
+                            using var scope = _scopeFactory.CreateScope();
+                            var _db = scope.ServiceProvider.GetRequiredService<AnalyticsDbContext>();
+                            var body = ea.Body.ToArray();
+                            var message = Encoding.UTF8.GetString(body);
+                            _logger.LogWarning("message data =====================> ", message);
+                            var record = JsonSerializer.Deserialize<CombinedRecord>(message);
+                            _logger.LogWarning("recode data ===> ",record);
+                            if (record == null)
                             {
-                                Date = record.Date,
-                                TotalUsers = record.Users,
-                                TotalSessions = record.Sessions,
-                                TotalViews = record.Views,
-                                AvgPerformance = record.PerformanceScore,
-                                LastUpdatedAt = DateTime.UtcNow
-                            };
-                            _db.DailyStats.Add(daily);
+                                await _channel.BasicNackAsync(ea.DeliveryTag, false, requeue: false);
+                                return;
+                            }
+                            
+                            // --- Save to DB ---
+                            _db.RawData.Add(record);
+
+                            var daily = _db.DailyStats.FirstOrDefault(d => d.Date == record.Date);
+                            if (daily == null)
+                            {
+                                daily = new DailyStats
+                                {
+                                    Date = record.Date,
+                                    TotalUsers = record.Users,
+                                    TotalSessions = record.Sessions,
+                                    TotalViews = record.Views,
+                                    AvgPerformance = record.PerformanceScore,
+                                    LastUpdatedAt = DateTime.UtcNow
+                                };
+                                _db.DailyStats.Add(daily);
+                            }
+                            else
+                            {
+                                daily.TotalUsers += record.Users;
+                                daily.TotalSessions += record.Sessions;
+                                daily.TotalViews += record.Views;
+                                daily.AvgPerformance = _db.RawData
+                                    .Where(r => r.Date == record.Date)
+                                    .Average(r => r.PerformanceScore);
+                                daily.LastUpdatedAt = DateTime.UtcNow;
+                            }
+
+                            await _db.SaveChangesAsync(stoppingToken);
+                            await _channel.BasicAckAsync(ea.DeliveryTag, false);
+
+                            Console.WriteLine($"[Consumer] Processed {record.Page} ({record.Date:yyyy-MM-dd})");
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            daily.TotalUsers += record.Users;
-                            daily.TotalSessions += record.Sessions;
-                            daily.TotalViews += record.Views;
-                            daily.AvgPerformance = (_db.RawData.Where(r => r.Date == record.Date)
-                                                              .Average(r => r.PerformanceScore));
-                            daily.LastUpdatedAt = DateTime.UtcNow;
+                            Console.WriteLine($"[!] Error processing message: {ex.Message}");
+                            await _channel!.BasicNackAsync(ea.DeliveryTag, false, requeue: true);
                         }
+                    };
 
-                        await _db.SaveChangesAsync();
-
-                        await _channel!.BasicAckAsync(deliveryTag: ea.DeliveryTag, multiple: false);
-                        Console.WriteLine($"[Consumer] Processed {record.Page} ({record.Date:yyyy-MM-dd})");
-                    }
-                    catch
+                    await _channel.BasicConsumeAsync(
+                        queue: _queueName,
+                        autoAck: false,
+                        consumer: consumer
+                    );
+                    Console.WriteLine("[*] Waiting for messages...");
+                    // Keep the connection alive
+                    while (!stoppingToken.IsCancellationRequested)
+                        await Task.Delay(1000, stoppingToken);
+                }
+                catch (Exception ex)
+                {
+                    attempt++;
+                    Console.WriteLine($"[!] RabbitMQ connection failed (attempt {attempt}): {ex.Message}");
+                    if (attempt >= maxRetries)
                     {
-                       await _channel!.BasicNackAsync(deliveryTag: ea.DeliveryTag, multiple: false, requeue: true);
+                        Console.WriteLine("[✗] Max retries reached. Waiting 1 minute before trying again...");
+                        attempt = 0;
+                        await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
+                    }
+                    else
+                    {
+                        await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
                     }
                 }
-            };
+            }
+        }
 
-            await _channel.BasicConsumeAsync(queue: _queueName, autoAck: false, consumer: consumer);
+        public override Task StopAsync(CancellationToken cancellationToken)
+        {
+            Console.WriteLine("[*] Stopping consumer...");
+            _channel?.CloseAsync();
+            _connection?.CloseAsync();
+            return base.StopAsync(cancellationToken);
         }
     }
 }

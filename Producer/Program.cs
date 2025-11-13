@@ -1,4 +1,6 @@
-using Producer.Models;
+using Application.Implementations;
+using Application.Interfaces;
+using DTOs;
 using Producer.Services;
 
 namespace Producer
@@ -15,6 +17,7 @@ namespace Producer
                     services.AddSingleton<IDataReader<GARecord>, GADataReader>();
                     services.AddSingleton<IDataReader<PSIRecord>, PSIDataReader>();
                     services.AddSingleton<IMessagePublisher, RabbitMqPublisher>();
+                    services.AddSingleton<IAggregatorService, AggregatorService>();
                     services.AddHostedService<Worker>();
                 }) .Build().Run();
             var host = builder.Build();

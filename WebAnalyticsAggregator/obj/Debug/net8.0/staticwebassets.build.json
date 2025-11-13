@@ -1,1 +1,12 @@
-{"Version":1,"Hash":"Bd+1KYbcAexw6aFkE1ULBFrBvvbubQvASOq4WOlaAww=","Source":"WebAnalyticsAggregator","BasePath":"_content/WebAnalyticsAggregator","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
+{
+  "Version": 1,
+  "Hash": "Bd+1KYbcAexw6aFkE1ULBFrBvvbubQvASOq4WOlaAww=",
+  "Source": "WebAnalyticsAggregator",
+  "BasePath": "_content/WebAnalyticsAggregator",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

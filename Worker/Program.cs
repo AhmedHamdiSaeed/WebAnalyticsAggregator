@@ -7,15 +7,18 @@ namespace worker
     public class Program
     {
         public static async Task Main(string[] args)
-        {
+        {          
             var host = Host.CreateDefaultBuilder(args)
             .ConfigureServices((context, services) =>
             {
-                // Add EF Core DbContext
-                services.AddDbContext<AnalyticsDbContext>(options =>
-                    options.UseSqlServer("Server=db;Database=AnalyticsDb;User Id=sa;Password=password;"));
+                // Get IConfiguration from context
+                var configuration = context.Configuration;
 
-                // Add your consumer worker
+                // Add EF Core DbContext using connection string from configuration
+                services.AddDbContext<AnalyticsDbContext>(options =>
+                    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+                // Add your worker service
                 services.AddHostedService<AnalyticsConsumerService>();
             })
             .Build();

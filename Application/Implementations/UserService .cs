@@ -1,5 +1,7 @@
-﻿using Application.DTOs.Auth;
+﻿
 using Application.Interfaces;
+using DTOs.Auth;
+using DTOs;
 using Infrastructure.Entities;
 using Infrastructure.interfaces;
 using System;
@@ -22,45 +24,96 @@ namespace Application.Implementations
             _jwtProvider = jwtProvider;
         }
 
-        public async Task<AuthResponseDto?> RegisterAsync(string name, string email, string password)
+        public async Task<Result<AuthResponseDto>> RegisterAsync(string name, string email, string password)
         {
-            if (await _userRepository.ExistsByEmailAsync(email))
-                return null;
-
-            var user = new User
+            try
             {
-                Name = name,
-                Email = email,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(password),
-                CreatedAt = DateTime.UtcNow
-            };
+                // Check if the email already exists
+                if (await _userRepository.ExistsByEmailAsync(email))
+                {
+                    return Result<AuthResponseDto>.Failure(
+                        errorMessage: "Email is already registered.",
+                        code: "EMAIL_EXISTS"
+                    );
+                }
 
-            await _userRepository.AddAsync(user);
+                // Create new user
+                var user = new User
+                {
+                    Name = name,
+                    Email = email,
+                    PasswordHash = BCrypt.Net.BCrypt.HashPassword(password),
+                    CreatedAt = DateTime.UtcNow
+                };
 
-            var token = _jwtProvider.GenerateToken(user);
+                await _userRepository.AddAsync(user);
 
-            return new AuthResponseDto
-            {
-                Name = user.Name,
-                Email = user.Email,
-                Token = token
-            };
+                // Generate JWT
+                var token = _jwtProvider.GenerateToken(user);
+
+                // Create response DTO
+                var response = new AuthResponseDto
+                {
+                    Name = user.Name,
+                    Email = user.Email,
+                    Token = token
+                };
+
+                // Return success result
+                return Result<AuthResponseDto>.Success(
+                    data: response,
+                    code: "USER_REGISTERED"
+                );
+            }
+            catch (Exception ex) {
+                // Return a failure result
+                return Result<AuthResponseDto>.Failure(
+                    errorMessage: "An error occurred while registering the user.",
+                    code: "USER_REGISTRATION_FAILED"
+                );
+            } 
         }
 
-        public async Task<AuthResponseDto?> LoginAsync(string email, string password)
+        public async Task<Result<AuthResponseDto>> LoginAsync(string email, string password)
         {
-            var user = await _userRepository.GetByEmailAsync(email);
-            if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
-                return null;
-
-            var token = _jwtProvider.GenerateToken(user);
-
-            return new AuthResponseDto
+            try
             {
-                Name = user.Name,
-                Email = user.Email,
-                Token = token
-            };
+                // Get the user by email
+                var user = await _userRepository.GetByEmailAsync(email);
+
+                // Check if user exists and password is correct
+                if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
+                {
+                    return Result<AuthResponseDto>.Failure(
+                        errorMessage: "Invalid email or password.",
+                        code: "INVALID_CREDENTIALS"
+                    );
+                }
+
+                // Generate JWT token
+                var token = _jwtProvider.GenerateToken(user);
+
+                // Create response DTO
+                var response = new AuthResponseDto
+                {
+                    Name = user.Name,
+                    Email = user.Email,
+                    Token = token
+                };
+
+                // Return success result
+                return Result<AuthResponseDto>.Success(
+                    data: response,
+                    code: "LOGIN_SUCCESS"
+                );
+            }
+            catch (Exception ex) {
+                // Return a standardized failure response
+                return Result<AuthResponseDto>.Failure(
+                    errorMessage: "Invalid credentials or an error occurred during login.",
+                    code: "USER_LOGIN_FAILED"
+                );
+            }
         }
     }
 }

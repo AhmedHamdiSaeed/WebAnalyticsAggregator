@@ -1,4 +1,5 @@
-﻿using Application.DTOs.Reports;
+﻿using DTOs.Reports;
+using DTOs;
 using Infrastructure.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace Application.Interfaces
 {
     public interface IReportService
     {
-        Task<OverviewReportDto> GetOverviewReportAsync();
+        Task<Result<OverviewReportDto>> GetOverviewReportAsync();
         Task<IEnumerable<PageReportDto>> GetPerPageReportAsync();
     }
 }

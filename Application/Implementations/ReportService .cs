@@ -1,5 +1,7 @@
-﻿using Application.DTOs.Reports;
+﻿
 using Application.Interfaces;
+using DTOs.Reports;
+using DTOs;
 using Infrastructure.interfaces;
 using System;
 using System.Collections.Generic;
@@ -19,30 +21,36 @@ namespace Application.Implementations
                 _analyticsRepository = analyticsRepository;
             }
 
-            public async Task<OverviewReportDto> GetOverviewReportAsync()
+            public async Task<Result<OverviewReportDto>> GetOverviewReportAsync()
             {
                 var dailyStats = await _analyticsRepository.GetAggregatedStatsAsync();
+            if (dailyStats.Any())
+            {
 
-                return new OverviewReportDto
+                var OverviewReportDto = new OverviewReportDto
                 {
                     TotalUsers = dailyStats.Sum(x => x.TotalUsers),
                     TotalSessions = dailyStats.Sum(x => x.TotalSessions),
                     TotalViews = dailyStats.Sum(x => x.TotalViews),
                     AvgPerformance = dailyStats.Average(x => x.AvgPerformance)
                 };
+                return  Result<OverviewReportDto>.Success(OverviewReportDto);   
+
             }
+            return Result<OverviewReportDto>.Success(
+                new OverviewReportDto
+                {
+                    TotalUsers = 0,
+                    TotalSessions = 0,
+                    TotalViews = 0,
+                    AvgPerformance = 0
+                },
+                code: "NO_DATA");
+        }
 
             public async Task<IEnumerable<PageReportDto>> GetPerPageReportAsync()
             {
-                var perPageStats = await _analyticsRepository.GetPerPageAggregatedStatsAsync();
-
-                return perPageStats.Select(x => new PageReportDto
-                {
-                    TotalUsers = x.TotalUsers,
-                    TotalSessions = x.TotalSessions,
-                    TotalViews = x.TotalViews,
-                    AvgPerformance = x.AvgPerformance
-                });
+               return await _analyticsRepository.GetPerPageAggregatedStatsAsync();
             }
         }
 }

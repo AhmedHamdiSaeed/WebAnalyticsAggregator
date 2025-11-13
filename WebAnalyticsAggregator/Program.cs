@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.Data.SqlClient;
 
 namespace API
 {
@@ -58,12 +59,26 @@ namespace API
                 };
             });
             var app = builder.Build();
-            // ===== APPLY MIGRATIONS HERE =====
             using (var scope = app.Services.CreateScope())
             {
                 var db = scope.ServiceProvider.GetRequiredService<AnalyticsDbContext>();
-                db.Database.Migrate(); // Automatically applies any pending migrations
+                var retries = 10;
+                while (retries > 0)
+                {
+                    try
+                    {
+                        db.Database.Migrate();
+                        break; // success
+                    }
+                    catch (SqlException)
+                    {
+                        retries--;
+                        Console.WriteLine("Waiting for SQL Server...");
+                        Thread.Sleep(5000); // wait 5 seconds
+                    }
+                }
             }
+
             // Configure the HTTP request pipeline.
 
             app.UseSwagger();

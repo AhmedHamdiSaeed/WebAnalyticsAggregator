@@ -1,11 +1,16 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /app
+WORKDIR /src
 
-COPY *.csproj .
-RUN dotnet restore
+COPY Application/Application.csproj Application/
+COPY Infrastructure/Infrastructure.csproj Infrastructure/
+COPY DTOs/DTOs.csproj DTOs/
+
+COPY WebAnalyticsAggregator/WebAnalyticsAggregator.csproj WebAnalyticsAggregator/
+RUN dotnet restore "WebAnalyticsAggregator/WebAnalyticsAggregator.csproj"
 
 COPY . .
-RUN dotnet publish -c Release -o out
+WORKDIR /src/WebAnalyticsAggregator
+RUN dotnet publish -c Release -o /app/out /p:UseAppHost=false
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
