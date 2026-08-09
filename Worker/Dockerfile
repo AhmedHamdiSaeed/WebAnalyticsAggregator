@@ -1,25 +1,18 @@
-# Base runtime
-FROM mcr.microsoft.com/dotnet/runtime:8.0 AS base
-WORKDIR /app
-
-# Build stage
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 
-# Copy csproj and restore
-COPY ["Consumer.csproj", "./"]
-RUN dotnet restore "./Consumer.csproj"
+COPY DTOs/DTOs.csproj DTOs/
+COPY Application/Application.csproj Application/
+COPY Infrastructure/Infrastructure.csproj Infrastructure/
+COPY Worker/Consumer.csproj Worker/
 
-# Copy all files and build
+RUN dotnet restore "Worker/Consumer.csproj"
+
 COPY . .
-RUN dotnet build "./Consumer.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/Worker"
+RUN dotnet publish "Consumer.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
-# Publish stage
-RUN dotnet publish "./Consumer.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
-
-# Final runtime stage
-FROM base AS final
+FROM mcr.microsoft.com/dotnet/runtime:8.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 ENTRYPOINT ["dotnet", "Consumer.dll"]

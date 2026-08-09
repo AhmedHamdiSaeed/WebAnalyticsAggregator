@@ -1,5 +1,6 @@
 # 📊 Web Analytics Aggregator
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Interactive%20Dashboard-brightgreen?style=for-the-badge&logo=github)](https://ahmedhamdisaeed.github.io/WebAnalyticsAggregator/)
 [![.NET 8.0](https://img.shields.io/badge/.NET-8.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
 [![C#](https://img.shields.io/badge/C%23-12.0-239120?style=for-the-badge&logo=c-sharp&logoColor=white)](https://learn.microsoft.com/en-us/dotnet/csharp/)
 [![RabbitMQ](https://img.shields.io/badge/RabbitMQ-3.8-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white)](https://www.rabbitmq.com/)
@@ -13,9 +14,11 @@ This application streams, correlates, and aggregates web analytics from multiple
 
 ---
 
-## 🌟 Visual Preview & Live Dashboard Mockup
+## 🌟 Visual Preview & Live Dashboard
 
-Check out the interactive portfolio dashboard preview located at [`docs/index.html`](docs/index.html) or open directly in your browser.
+🌐 **Live Interactive Portfolio Dashboard**: [https://ahmedhamdisaeed.github.io/WebAnalyticsAggregator/](https://ahmedhamdisaeed.github.io/WebAnalyticsAggregator/)
+
+Check out the interactive portfolio dashboard preview live online or locally at [`docs/index.html`](docs/index.html).
 
 ```
 +-----------------------------------------------------------------------------------+
@@ -140,9 +143,9 @@ docker-compose up --build -d
 ```
 
 #### Verification:
+- **Live Interactive Dashboard**: [https://ahmedhamdisaeed.github.io/WebAnalyticsAggregator/](https://ahmedhamdisaeed.github.io/WebAnalyticsAggregator/)
 - **Web API Swagger UI**: `http://localhost:8080/swagger`
 - **RabbitMQ Management Console**: `http://localhost:15672` (User: `user`, Password: `password`)
-- **Interactive Dashboard Preview**: Open `docs/index.html` in your browser.
 
 ---
 
