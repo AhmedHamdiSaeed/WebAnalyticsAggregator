@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebAnalyticsAggregator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4aa3dc81ea8c293bea14244db899587dbc218235")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f366d7ca06d68361c007f2385075566c3fdfe7f")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebAnalyticsAggregator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebAnalyticsAggregator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

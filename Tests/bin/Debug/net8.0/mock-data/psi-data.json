@@ -1,0 +1,96 @@
+﻿[
+    {
+        "date": "2025-10-20",
+        "page": "/home",
+        "performanceScore": 0.9,
+        "LCP_ms": 2100
+    },
+    {
+        "date": "2025-10-20",
+        "page": "/about",
+        "performanceScore": 0.85,
+        "LCP_ms": 2300
+    },
+    {
+        "date": "2025-10-20",
+        "page": "/contact",
+        "performanceScore": 0.8,
+        "LCP_ms": 2500
+    },
+
+    {
+        "date": "2025-10-21",
+        "page": "/home",
+        "performanceScore": 0.92,
+        "LCP_ms": 2050
+    },
+    {
+        "date": "2025-10-21",
+        "page": "/about",
+        "performanceScore": 0.87,
+        "LCP_ms": 2250
+    },
+    {
+        "date": "2025-10-21",
+        "page": "/contact",
+        "performanceScore": 0.82,
+        "LCP_ms": 2450
+    },
+
+    {
+        "date": "2025-10-22",
+        "page": "/home",
+        "performanceScore": 0.93,
+        "LCP_ms": 2000
+    },
+    {
+        "date": "2025-10-22",
+        "page": "/about",
+        "performanceScore": 0.88,
+        "LCP_ms": 2200
+    },
+    {
+        "date": "2025-10-22",
+        "page": "/contact",
+        "performanceScore": 0.83,
+        "LCP_ms": 2400
+    },
+
+    {
+        "date": "2025-10-23",
+        "page": "/home",
+        "performanceScore": 0.94,
+        "LCP_ms": 1980
+    },
+    {
+        "date": "2025-10-23",
+        "page": "/about",
+        "performanceScore": 0.89,
+        "LCP_ms": 2180
+    },
+    {
+        "date": "2025-10-23",
+        "page": "/contact",
+        "performanceScore": 0.84,
+        "LCP_ms": 2380
+    },
+
+    {
+        "date": "2025-10-24",
+        "page": "/home",
+        "performanceScore": 0.95,
+        "LCP_ms": 1950
+    },
+    {
+        "date": "2025-10-24",
+        "page": "/about",
+        "performanceScore": 0.9,
+        "LCP_ms": 2150
+    },
+    {
+        "date": "2025-10-24",
+        "page": "/contact",
+        "performanceScore": 0.85,
+        "LCP_ms": 2350
+    }
+]

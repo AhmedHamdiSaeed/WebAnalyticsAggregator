@@ -1,8 +1,9 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "WebAnalyticsAggregator",
-    "version": "1.0"
+    "title": "Web Analytics Aggregator API",
+    "description": "Distributed Web Analytics & Core Web Vitals Aggregator API",
+    "version": "v1"
   },
   "paths": {
     "/api/Auth/register": {
@@ -217,6 +218,19 @@
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Enter 'Bearer' followed by a space and your JWT token.",
+        "scheme": "Bearer",
+        "bearerFormat": "JWT"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }

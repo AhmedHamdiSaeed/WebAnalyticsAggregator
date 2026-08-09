@@ -1,6 +1,39 @@
-@WebAnalyticsAggregator_HostAddress = http://localhost:5259
+@WebAnalyticsAggregator_HostAddress = http://localhost:8080
 
-GET {{WebAnalyticsAggregator_HostAddress}}/weatherforecast/
+### 1. Register New Account
+POST {{WebAnalyticsAggregator_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Portfolio Reviewer",
+  "email": "reviewer@example.com",
+  "password": "SecurePassword123!"
+}
+
+### 2. Login User
+# @name login
+POST {{WebAnalyticsAggregator_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "reviewer@example.com",
+  "password": "SecurePassword123!"
+}
+
+### Store token from response
+@authToken = {{login.response.body.data.token}}
+
+### 3. Get Aggregated Overview Report
+GET {{WebAnalyticsAggregator_HostAddress}}/api/reports/overview
 Accept: application/json
+Authorization: Bearer {{authToken}}
 
-###
+### 4. Get Per-Page Performance & Analytics Metrics
+GET {{WebAnalyticsAggregator_HostAddress}}/api/reports/pages
+Accept: application/json
+Authorization: Bearer {{authToken}}
+
+### 5. Get Daily Time-Series Stats for a Specific Page
+GET {{WebAnalyticsAggregator_HostAddress}}/api/reports/daily?page=https://example.com/home
+Accept: application/json
+Authorization: Bearer {{authToken}}
