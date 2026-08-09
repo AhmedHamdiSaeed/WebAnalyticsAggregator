@@ -1,5 +1,6 @@
 # 📊 Web Analytics Aggregator
 
+[![Build & Test CI](https://github.com/AhmedHamdiSaeed/WebAnalyticsAggregator/actions/workflows/ci.yml/badge.svg)](https://github.com/AhmedHamdiSaeed/WebAnalyticsAggregator/actions)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Interactive%20Dashboard-brightgreen?style=for-the-badge&logo=github)](https://ahmedhamdisaeed.github.io/WebAnalyticsAggregator/)
 [![.NET 8.0](https://img.shields.io/badge/.NET-8.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
 [![C#](https://img.shields.io/badge/C%23-12.0-239120?style=for-the-badge&logo=c-sharp&logoColor=white)](https://learn.microsoft.com/en-us/dotnet/csharp/)
@@ -241,6 +242,19 @@ Test Run Summary:
   Skipped:     0
 Total Duration: 1.2 Seconds
 ```
+
+---
+
+## 🔄 CI/CD Pipeline & GitHub Actions
+
+Automated build and test workflows are defined in [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
+
+### How to Trigger the CI Pipeline:
+1. **Automated (On Code Push / PR)**:
+   Any `git push` or Pull Request targeting the `main` or `master` branch automatically triggers a fresh build, restores dependencies, executes all 12 xUnit tests, and validates Docker Compose configurations.
+
+2. **Manual Trigger (GitHub UI)**:
+   Navigate to the **Actions** tab on GitHub $\rightarrow$ Select **Build & Test CI** $\rightarrow$ Click **Run workflow** $\rightarrow$ Select branch and click **Run workflow**.
 
 ---
 
