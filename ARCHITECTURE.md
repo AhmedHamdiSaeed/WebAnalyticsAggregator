@@ -8,18 +8,24 @@
 
 ## 🏛️ Architectural Design Patterns
 
-### 1. Clean Architecture (Onion Architecture)
-The application adheres strictly to dependency inversion and onion architecture boundaries:
+### 1. Event-Driven Microservices Topology
+The system is constructed as three decoupled microservices interacting asynchronously over an event bus:
+- **Producer Microservice (`Producer`)**: Autonomous data ingestion service publishing telemetry events.
+- **Worker Consumer Microservice (`Worker`)**: Autonomous background worker listening to RabbitMQ queues, executing metric correlation, and handling data persistence.
+- **Reporting Web API Microservice (`WebAnalyticsAggregator`)**: Autonomous RESTful API gateway serving JWT-secured endpoints and Swagger documentation.
+
+### 2. Clean Architecture (Onion Architecture)
+Each service strictly enforces Clean Architecture layer boundaries:
 - **Domain Layer (`Domain`)**: Core entities, base domain primitives, domain exceptions, independent of any frameworks.
 - **Application Layer (`Application`)**: Use case implementations (`ReportService`, `UserService`), business logic interfaces, and application DTOs.
 - **Infrastructure Layer (`Infrastructure`)**: Persistence (`AnalyticsDbContext`), SQL Server Repositories (`AnalyticsRepository`, `UserRepository`), Security services (`JwtProvider`, `PasswordHasher`).
 - **Presentation / Ingestion Layer (`WebAnalyticsAggregator`, `Producer`, `Worker`)**: API Endpoints, background message consumers, data readers, and queue publishers.
 
-### 2. Event-Driven Architecture (Producer-Consumer)
+### 3. Event-Driven Messaging (RabbitMQ Event Bus)
 - Data ingestion is completely decoupled from database writes.
-- The **Producer Service** reads raw streaming metrics from simulated Google Analytics (GA) and PageSpeed Insights (PSI) sources.
-- Messages are published asynchronously to **RabbitMQ** queue `analytics.raw.q`.
-- The **Worker (Consumer Service)** listens to RabbitMQ, parses incoming JSON payloads, correlates incoming metrics by URL & Date, and persists aggregated analytics directly into SQL Server.
+- The **Producer Microservice** reads raw streaming metrics from simulated Google Analytics (GA) and PageSpeed Insights (PSI) sources.
+- Event messages are published asynchronously to **RabbitMQ** event queue `analytics.raw.q`.
+- The **Worker Consumer Microservice** listens to RabbitMQ, parses incoming JSON payloads, correlates metrics by URL & Date, and persists aggregated analytics into SQL Server.
 
 ---
 

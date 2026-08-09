@@ -2,6 +2,7 @@
 
 [![Build & Test CI](https://github.com/AhmedHamdiSaeed/WebAnalyticsAggregator/actions/workflows/ci.yml/badge.svg)](https://github.com/AhmedHamdiSaeed/WebAnalyticsAggregator/actions)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Interactive%20Dashboard-brightgreen?style=for-the-badge&logo=github)](https://ahmedhamdisaeed.github.io/WebAnalyticsAggregator/)
+[![Architecture](https://img.shields.io/badge/Architecture-Event--Driven%20Microservices-orange?style=for-the-badge&logo=diagramsdotnet&logoColor=white)](ARCHITECTURE.md)
 [![.NET 8.0](https://img.shields.io/badge/.NET-8.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
 [![C#](https://img.shields.io/badge/C%23-12.0-239120?style=for-the-badge&logo=c-sharp&logoColor=white)](https://learn.microsoft.com/en-us/dotnet/csharp/)
 [![RabbitMQ](https://img.shields.io/badge/RabbitMQ-3.8-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white)](https://www.rabbitmq.com/)
@@ -9,9 +10,9 @@
 [![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-A high-performance, distributed **Web Analytics Aggregation Engine** built with **.NET 8**, **Clean Architecture**, **RabbitMQ**, **EF Core**, and **SQL Server**.
+A high-performance **Event-Driven Microservices Web Analytics Aggregation Engine** built with **.NET 8**, **Clean Architecture**, **RabbitMQ Message Broker**, **EF Core**, and **SQL Server**.
 
-This application streams, correlates, and aggregates web analytics from multiple sources (Google Analytics pageviews/traffic + PageSpeed Insights Core Web Vitals) through asynchronous message queues, rendering unified performance dashboards and JWT-secured RESTful reporting APIs.
+This distributed microservices solution streams, correlates, and aggregates web analytics from multiple sources (Google Analytics pageviews/traffic + PageSpeed Insights Core Web Vitals) through asynchronous RabbitMQ event channels, rendering unified performance dashboards and JWT-secured RESTful reporting APIs.
 
 ---
 
@@ -41,25 +42,52 @@ The project adheres to **Clean Architecture** principles and implements an **Eve
 
 ```mermaid
 flowchart TD
-    subgraph Data Sources & Ingestion
-        GA[Google Analytics Reader] -->|GA Records| PROD[Producer Service]
+    subgraph Ingestion Microservice
+        GA[Google Analytics Reader] -->|GA Records| PROD[Producer Microservice]
         PSI[PageSpeed Insights Reader] -->|PSI Records| PROD
     end
 
-    subgraph Message Broker
-        PROD -->|Publish Message| RMQ[(RabbitMQ Broker: analytics.raw.q)]
+    subgraph Event Bus / Message Broker
+        PROD -->|Publish Event| RMQ[(RabbitMQ Event Queue: analytics.raw.q)]
     end
 
-    subgraph Processing Engine
-        RMQ -->|Consume Queue| WRK[Worker Consumer Service]
+    subgraph Processing & Aggregation Microservice
+        RMQ -->|Consume Queue| WRK[Worker Consumer Microservice]
         WRK -->|Correlate & Aggregate| DB[(SQL Server Database)]
     end
 
-    subgraph Web API & Presentation Layer
+    subgraph Presentation & API Gateway Microservice
         CLIENT[Client / Dashboard / Swagger UI] -->|HTTP Request + JWT| API[ASP.NET Core Web API]
-        API -->|Query Repositories| DB
+        API -->|Query Aggregated Views| DB
     end
 ```
+
+---
+
+### 🧩 Microservices Ecosystem Breakdown
+
+The solution consists of three independently deployable microservices and two infrastructure containers:
+
+1. 📤 **Producer Microservice (`Producer`)**:
+   - **Role**: Data Ingestion & Event Producer.
+   - **Function**: Reads streaming Google Analytics & PageSpeed Insights telemetry and publishes event messages to RabbitMQ.
+   - **Deployment**: Containerized .NET 8 background worker service.
+
+2. ⚙️ **Worker Consumer Microservice (`Worker`)**:
+   - **Role**: Event Processing, Aggregation & Persistence Engine.
+   - **Function**: Listens to RabbitMQ queues, correlates pageviews and Core Web Vitals by URL and date, and persists reconciled models to SQL Server.
+   - **Deployment**: Containerized .NET 8 background consumer service.
+
+3. 🌐 **Reporting Web API Microservice (`WebAnalyticsAggregator`)**:
+   - **Role**: Presentation & REST API Gateway.
+   - **Function**: Serves JWT-secured RESTful reporting endpoints (Overview KPIs, Per-page stats, Daily trends) and OpenAPI/Swagger UI.
+   - **Deployment**: Containerized ASP.NET Core Web API.
+
+4. 📬 **RabbitMQ Message Broker (`rabbitmq`)**:
+   - **Role**: Asynchronous Inter-Service Communication Bus decoupling Producers from Consumers.
+
+5. 🗄️ **SQL Server Database (`db`)**:
+   - **Role**: Centralized relational persistence store managed via Entity Framework Core migrations.
 
 ---
 
