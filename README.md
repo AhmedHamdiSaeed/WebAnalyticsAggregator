@@ -168,7 +168,7 @@ git clone https://github.com/AhmedHamdiSaeed/WebAnalyticsAggregator.git
 cd WebAnalyticsAggregator
 
 # 2. Build and start all services
-docker-compose up --build -d
+docker compose up --build -d
 ```
 
 #### Verification:
@@ -182,7 +182,7 @@ docker-compose up --build -d
 
 ```bash
 # 1. Start RabbitMQ and SQL Server containers
-docker-compose up rabbitmq db -d
+docker compose up rabbitmq db -d
 
 # 2. Run Database Migrations & Start Web API
 dotnet run --project WebAnalyticsAggregator/WebAnalyticsAggregator.csproj
